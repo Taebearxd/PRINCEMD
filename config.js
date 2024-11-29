@@ -40,9 +40,9 @@ global.confirmCode = ""
 
 
 //💌global.pairingNumber = "" //put your bot number here💌
-global.mods = ['923092668108'] 
-global.prems = ['923092668108']
-global.allowed = ['923092668108']
+global.mods = ['917439317360'] 
+global.prems = ['917439317360']
+global.allowed = ['917439317360']
 global.keysZens = ['c2459db922', '37CC845916', '6fb0eff124']
 global.keysxxx = keysZens[Math.floor(keysZens.length * Math.random())]
 global.keysxteammm = ['29d4b59a4aa687ca', '5LTV57azwaid7dXfz5fzJu', 'cb15ed422c71a2fb', '5bd33b276d41d6b4', 'HIRO', 'kurrxd09', 'ebb6251cc00f9c63']
@@ -150,13 +150,13 @@ global.developer = 'https://wa.me/message/DCAK67ON3XVOG1' //contact
 
 
 //Sticker WM
-global.wm = process.env.BOT_NAME
-global.botname = process.env.BOT_NAME
-global.princebot = '🛡️𝘗𝘙𝘐𝘕𝘊𝘌-𝘉𝘖𝘛-𝘔𝘋🛡️'
-global.packname = process.env.PACK_NAME
-global.author = 'Prince♥️' 
-global.princeig = 'https://www.instagram.com' 
-global.princegp = 'https://whatsapp.com/channel/0029VaKNbWkKbYMLb61S1v11'
+global.wm = '𝐍𝐎𝐈𝐑-𝐁𝐎𝐓'
+global.botname = '𝐍𝐎𝐈𝐑-𝐁𝐎𝐓'
+global.princebot = '𝐍𝐎𝐈𝐑-𝐁𝐎𝐓'
+global.packname = '⎯⎯ּ︭   🧸̼᪲ 𝐍𝐎𝐈𝐑  ❜❜ ᪶'
+global.author = '𝐃𝐎𝐍'𝐓 𝐂𝐎𝐏𝐘 𝐌𝐘 𝐅𝐋𝐎𝐖 ‼️' 
+global.princeig = 'https://www.instagram.com/_.noirxd/profilecard/?igsh=MTBiZHJ0eXNsNGJ6OA==' 
+global.princegp = 'https://chat.whatsapp.com/EZjCgLTJfRd8LHOyVC163u'
 global.menuvid = 'https://i.imgur.com/GFAAXqw.mp4'
 global.Princesc = 'https://github.com/PRINCE-GDS/THE-PRINCE-BOT' 
 global.princeyt = 'https://youtube.com/'
@@ -168,7 +168,7 @@ global.thumb = fs.readFileSync('./Assets/Prince.png')
 
 //Reactions
 global.wait = '*`⏰ 𝙷𝚘𝚕𝚍 𝙾𝚗 𝙿𝚛𝚘𝚌𝚎𝚜𝚜𝚒𝚗𝚐...`*'
-global.imgs = '*🖼️ _𝙶𝙴𝚃𝚃𝙸𝙽𝙶 𝚈𝙾𝚄𝚁 ɪᴍᴀɢᴇs 𝚆𝙰𝙸𝚃..._*\n*▰▰▰▱▱▱▱▱*'
+global.imgs = '*🖼️ _𝙰𝚋𝚋𝚎 𝚛𝚞𝚔𝚑 𝚋𝚑𝚊𝚒..._*\n*▰▰▰▱▱▱▱▱*'
 global.rwait = '♻️'
 global.dmoji = '🤭'
 global.done = '✅'
