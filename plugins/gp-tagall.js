@@ -1,8 +1,14 @@
 let handler = async (m, { conn, text, participants, isAdmin, isOwner, groupMetadata }) => {
-    let users = participants.map(u => u.id).filter(v => v !== conn.user.jid)
-    m.reply(`┃💗⊹ 𝗚𝗥𝗢𝗨𝗣 : *${groupMetadata.subject}*\n\n┃💗⊹ 𝗠𝗘𝗠𝗕𝗘𝗥𝗦 : *${participants.length}*${text ? `\n┃💗⊹ 𝗠𝗘𝗦𝗦𝗔𝗚𝗘 : ${text}\n` : ''}\n\n┌───⊷ 𝗠𝗘𝗡𝗧𝗜𝗢𝗡𝗦\n` + users.map(v => '┃💗⊹ @' + v.replace(/@.+/, '')).join`\n` + '\n└──✪ ⚡𝑷-𝑴𝑫⚡ ┃ ᴮᴼᵀ ✪──', null, {
-        mentions: users
-    })
+  let users = participants.map(u => u.id).filter(v => v !== conn.user.jid)
+  m.reply(
+    `𖥻̶🥛⃞̸̶ ᜔ֺ 𝐆𝗋ⱺυρ : *${groupMetadata.subject}*\n   ⃞🌸̨ᩙ𖹭᭢   𝐌𝖾ꭑᑲ𝖾𝗋𝗌 : *${participants.length}*${text ? `\n░⃝🩰̸̶᜔ 𝐌𝖾𝗌𝗌α𝗀𝖾 : ${text}\n` : ''}\n┌───⊷ *MENTIONS*\n` +
+      users.map(v => '🍓꯭ദິ @' + v.replace(/@.+/, '')).join`\n` +
+      '\n︵︵   ݁  𓂃୨  🎀  ୧𓂃  ݁   ︵︵',
+    null,
+    {
+      mentions: users,
+    }
+  )
 }
 
 handler.help = ['tagall']
