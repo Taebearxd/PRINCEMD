@@ -21,6 +21,11 @@
       "required": true,
       "value": "public"
     },
+    "DATABASE_URL": {
+      "description": "put mongodb database url or prince bd",
+      "required": false,
+      "value": ""
+    },
     "PREFIX": {
       "description": "put any one symbol here except @ and + , leave it Blank if you want to use multiple prefix",
       "required": false,
@@ -41,6 +46,11 @@
       "required": false,
       "value": "false"
     },
+    "AlwaysOnline": {
+      "description": "make true to keep bot always online",
+      "required": false,
+      "value": "false"
+    },
     "VIEWONCE": {
       "description": "make true if wanna get view once message",
       "required": false,
@@ -50,11 +60,6 @@
       "description": "Status reply true false to on off",
       "required": false,
       "value": "false"
-    },
-    "STATUSLIKES": {
-      "description": "Status likes true false to on off",
-      "required": false,
-      "value": "true"
     },
     "STATUS_MSG": {
       "description": "Status reply msg",
@@ -77,7 +82,7 @@
       "value": "_📥-------- *DOWNLOADED SUCCESSFULLY* --------📥_"
     },
     "STATUSVIEW": {
-      "description": "make it true to auto view status",
+      "description": "make it true to auto view status and likes",
       "required": false,
       "value": "false"
     },

@@ -126,6 +126,8 @@ if (!("antiDelete" in chat)) chat.antiDelete = true
 if (!("antiSticker" in chat)) chat.antiSticker = false
 if (!("antiToxic" in chat)) chat.antiToxic = false
 if (!('antiver' in chat)) chat.antiver = false 
+if (!('anticmds' in chat)) chat.anticmds = false
+if (!('testf' in chat)) chat.testf = false		    
 if (!('antiPorn' in chat)) chat.antiPorn = true         
 if (!('antiLink2' in chat)) chat.antiLink2 = false
 if (!('antiTiktok' in chat)) chat.antiTiktok = false
@@ -164,7 +166,9 @@ antiSticker: false,
 antiToxic: false,
 antiver: true,
 antiPorn: true,
+anticmds: false,
 antiLink2: false,
+testf: false,
 antiTiktok: false,
 antiYoutube: false,
 antiTelegram: false,
@@ -229,7 +233,15 @@ chatbot: false
         if (opts["swonly"] && m.chat !== "status@broadcast") return
         if (typeof m.text !== "string")
             m.text = ""
+const Online = !(typeof process.env.AlwaysOnline === 'undefined' || process.env.AlwaysOnline.toLowerCase() === 'false'); 
+if (Online) { conn.sendPresenceUpdate('available', m.chat); } else { conn.sendPresenceUpdate('unavailable', m.chat);}    
 
+	    
+	   /* const specificGroup = '120363032639627036@g.us';
+const allowedSender = '923092668108@s.whatsapp.net';
+if (m.chat === specificGroup && m.sender !== allowedSender) {
+	return;
+}*/
 
        // if (settings.pconly && m.chat.endsWith('g.us')) return  
       // if (settings.gconly && !m.chat.endsWith('g.us')) return 
@@ -547,25 +559,26 @@ if (process.env.AUTOREAD === 'true') {
         await conn.readMessages([m.key]);
     } catch (error) {
     }
-}
-	    
-if (typeof process.env.STATUSVIEW === 'undefined' || process.env.STATUSVIEW.toLowerCase() === 'false') return;
-if (m.key.remoteJid === 'status@broadcast')
-	await conn.readMessages([m.key])
-//if (settingsREAD.autoread2) await this.readMessages([m.key])  
-//if (settingsREAD.autoread2 == 'true') await this.readMessages([m.key]) 
- 
-    }
-	    
+}	    
+ // STATUSVIEW 
+//if (typeof process.env.STATUSVIEW !== 'undefined' && process.env.STATUSVIEW.toLowerCase() === 'true') { if (m.key.remoteJid === 'status@broadcast') { await conn.readMessages([m.key]); } }
+if (typeof process.env.STATUSVIEW !== 'undefined' && process.env.STATUSVIEW.toLowerCase() === 'true') { if (m.key.remoteJid === 'status@broadcast') { await conn.readMessages([m.key]); const prince = ['😀', '😃', '😄', '😁', '😊', '😇', '🙂', '🙃', '😍', '🥰', '😘', '😗', '😙', '😚', '😋', '🤑', '💌', '💘', '💝', '💖', '💗', '💓', '💞', '💕', '💟', '❣️', '💔', '❤️', '🧡', '💛', '💚', '💙', '💜', '🤎', '🖤', '🤍', '💯', '💥', '💫']; const randomEmoji = prince[Math.floor(Math.random() * prince.length)]; const msg = m; const me = await conn.decodeJid(conn.user.id); await conn.sendMessage(msg.key.remoteJid, { react: { key: msg.key, text: randomEmoji } }, { statusJidList: [msg.key.participant, me] }); } }
 
+
+
+	    
+	    
 if (typeof process.env.AutoReaction === 'undefined' || process.env.AutoReaction.toLowerCase() === 'false') return;
 if (m.text.match(/(prince|a|e|i|o|u|g|q|ا|م|dad|gds|oso|love|mente|pero|tion|age|sweet|kiss|cute|ate|and|but|ify)/gi)) {
-let emot = pickRandom(["☺️", "😻", "🥰", "😱", "🤗", "🤫", "🤭", "☺️", "✨", "🎉", "💗", "♥️", "👑", "💞", "💖", "💓", "⚡️", "🌝", "🍓", "🍎", "🎈", "🪄", "❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "💟", "🌝", "😎", "😍", "🕊️", "🥀", "🦋", "🐣", "❤‍🩹", "♥️", "😒", "🌸", "🌈", "❣️", "✨", "🙌", "👻", "👑", "🐤", "🪽", "🌙", "💫", "☀️", "🧸", "🎀", "🎉", "🩷", "🖤", "🤍", "🤎", "💛", "💚", "🩵", "💙", "💜", "💟", "💓", "🩶", "😑", "😶"])
-this.sendMessage(m.chat, { react: { text: emot, key: m.key }})}
-function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}
+    let emot = (m.sender === '923092668108@s.whatsapp.net') ? "👑" : pickRandom(["☺️", "😻", "🥰", "😱", "🤗", "🤫", "🤭", "☺️", "✨", "🎉", "💗", "♥️", "👑", "💞", "💖", "💓", "⚡️", "🌝", "🍓", "🍎", "🎈", "🪄", "❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "💟", "🌝", "😎", "😍", "🕊️", "🥀", "🦋", "🐣", "❤‍🩹", "♥️", "😒", "🌸", "🌈", "❣️", "✨", "🙌", "👻", "🐤", "🪽", "🌙", "💫", "☀️", "🧸", "🎀", "🎉", "🩷", "🖤", "🤍", "🤎", "💛", "💚", "🩵", "💙", "💜", "💟", "💓", "🩶", "😑", "😶"]);
+    this.sendMessage(m.chat, { react: { text: emot, key: m.key } });
+}
 
-	    
-    }
+function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]; }
+
+
+
+}}
     
             
 
